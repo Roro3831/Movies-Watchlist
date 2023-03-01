@@ -4,7 +4,7 @@ let moviesLocalStorage = []
 async function setMoviesArray(dataSearch){ 
     moviesArray = []
     for(const movie of dataSearch){      
-        const res = await fetch(`http://www.omdbapi.com/?apikey=5db38818&i=${movie.imdbID}`) // specific search by title
+        const res = await fetch(`https://www.omdbapi.com/?apikey=5db38818&i=${movie.imdbID}`) // specific search by title
         const data = await res.json()
         if (data.Response === 'True'){
             moviesArray.push({

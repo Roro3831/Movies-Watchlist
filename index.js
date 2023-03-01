@@ -9,7 +9,7 @@ const mainVideDiv = document.getElementById('main-vide')
 
 searchForm.addEventListener('submit', async e => {
     e.preventDefault()
-    const res = await fetch(`http://www.omdbapi.com/?apikey=5db38818&s=${textSearch.value}`) //  general search
+    const res = await fetch(`https://www.omdbapi.com/?apikey=5db38818&s=${textSearch.value}`) //  general search
     const data = await res.json()
     if(data.Response === "True"){
         reponseDiv.innerHTML = `<img class="loader" src=/images/50655.gif>`
