@@ -1,0 +1,258 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    max-width: 1080px;
+    color:whitesmoke;
+    font-family: 'Inter', sans-serif;
+}
+
+/* HEADER  */
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20vh;
+}
+.img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 20vh;
+    object-fit: cover;
+    object-position: 0 25%;
+    filter:brightness(30%)
+}
+header a,
+.header-text,
+.lien {
+    z-index: 1;
+    color:whitesmoke
+}
+
+header a{
+    text-decoration: none;
+}
+.header-text{
+    font-size: 2.3rem;
+    padding: 0 8vw;
+    font-weight: 800;
+}
+
+.lien {
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-right: 5vw;
+    cursor: pointer;
+}
+/* FORMULAIRE */
+form {
+    display: flex;
+    color:#6B7280;
+    position: absolute;
+    bottom: -2vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    background-color: inherit; /* background without default*/
+    width: 80%;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+}
+
+#btn,
+#search {
+      border: none;
+      background-color: white;
+}
+
+#btn {
+    cursor: pointer;
+    margin-left: -3px;
+    width: 20%;
+    text-align: center;
+    padding-top: 0.9vh;
+    font-size: 0.9em;
+}
+#btn:active,
+#btn:focus {
+    border: 0.5px solid #D1D5DB;
+    border-radius: 6px;
+}
+
+#search {
+    border-right: 5px solid #D1D5DB;
+    width: 80%;
+    padding: 1.2vh 0.5em;
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+/* VIDE INDEX.HTML*/
+
+.main-vide {
+    margin: auto;
+}
+
+.icon-vide{
+    display: block;
+    margin:auto;
+}
+
+.text-vide{
+    color: #D1D5DB;
+    margin-left: 8vw;
+    margin-right: 8vw;
+}
+
+/* VIDE WATCHLIST.HTML */
+
+.add-watchlist{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+.img-plus{
+    display:block;
+    cursor: pointer;
+}
+
+.p{
+    color:black;
+}
+
+/* REPONSE INDEX.HTML */
+.reponse {
+    margin-top:1em;
+
+}
+
+.movie {
+    margin: 0 5em;
+    padding-bottom: 2.5em;
+    border-bottom: 2px solid #E5E7EB;
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 1fr;
+    grid-template-rows: 5.5vh 2vh 5vh 9vh;
+    grid-template-areas: 
+        "image titre titre titre"
+        "image titre titre titre"
+        "image duree genre watchlistBtn"
+        "image desc desc desc";
+}
+
+.duree,
+.genre,
+.desc-movie,
+.watchlist-btn{
+    font-weight:400;
+    
+}
+
+.duree,
+.genre,
+.watchlist-btn{
+    font-size: 0.75rem;
+    color:#111827;
+    line-height: 167%;
+}
+
+
+.movie-img{
+    grid-area: image;
+    height: 20vh;
+    margin-right:1em;
+}
+
+.titre {
+    grid-area: titre;
+    font-weight: 500;
+    color:black;
+    line-height: 111%;
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.duree{
+    grid-area: duree;
+}
+
+.genre{
+    grid-area: genre;
+    overflow: hidden;  /*if content go out of container it is hidden*/
+}
+
+.watchlist-btn{
+    grid-area: watchlistBtn;
+    position: relative;
+}
+
+.watchlist-btn img{
+    position: absolute;
+    left: -1.8em;
+    top: 1.1em;
+}
+
+.btn-plus,
+.btn-moins{
+    cursor: pointer;
+}
+
+.desc-movie{ 
+    grid-area: desc;
+    font-size: 0.875rem;
+    color:#6B7280;
+    line-height: 143%;
+   
+}
+
+@media (max-width: 720px){
+
+    .movie {
+        display:flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 3em;
+    }
+    .movie-img{
+        display:block;
+        object-fit: contain;
+        height: 40vh;
+        margin: 0;
+        padding: 0;
+    }
+
+    .watchlist-btn img{
+        left: 4.6em;
+        top: 1.15em;
+    }
+}
+
+.loader {
+    display:block;
+    margin: auto;
+}
+
+/* 
+TRONQUER after 4 lignes :
+
+display: -webkit-inline-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 4;
+overflow: hidden; */
